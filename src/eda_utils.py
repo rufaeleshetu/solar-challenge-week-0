@@ -1,20 +1,37 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def load_data(path):
+class SolarDataAnalyzer:
     """
-    Load a CSV file into a pandas DataFrame.
+    A utility class for loading and analyzing solar data.
     """
-    return pd.read_csv(path)
 
-def plot_timeseries(df, column, title):
-    """
-    Plot a time-series column from the DataFrame.
-    """
-    plt.figure(figsize=(10, 4))
-    df[column].plot()
-    plt.title(title)
-    plt.xlabel("Time")
-    plt.ylabel(column)
-    plt.tight_layout()
-    plt.show()
+    def __init__(self, filepath):
+        """
+        Initialize the analyzer by loading the CSV data.
+
+        Args:
+            filepath (str): Relative path to the CSV file.
+        """
+        self.df = pd.read_csv(filepath)
+
+    def plot_column(self, column, title="Column Over Time"):
+        """
+        Plot a time series line graph for a given column.
+
+        Args:
+            column (str): Column name to plot.
+            title (str): Title of the plot.
+        """
+        plt.plot(self.df[column])
+        plt.title(title)
+        plt.xlabel("Time")
+        plt.ylabel(column)
+        plt.tight_layout()
+        plt.show()
+
+    def summary_stats(self):
+        """
+        Return summary statistics of the dataset.
+        """
+        return self.df.describe()
