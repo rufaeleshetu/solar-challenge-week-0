@@ -29,4 +29,3 @@ class SolarDataAnalyzer:
         Return summary statistics of the dataset.
         """
         return self.df.describe()
-    
