@@ -30,4 +30,3 @@ class SolarDataAnalyzer:
         """
         return self.df.describe()
     
-    
