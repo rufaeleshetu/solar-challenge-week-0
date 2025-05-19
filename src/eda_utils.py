@@ -1,6 +1,8 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
+
+
 class SolarDataAnalyzer:
     """
     A utility class for loading and analyzing solar data.
@@ -35,3 +37,4 @@ class SolarDataAnalyzer:
         Return summary statistics of the dataset.
         """
         return self.df.describe()
+    
