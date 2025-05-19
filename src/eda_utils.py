@@ -8,6 +8,7 @@ class SolarDataAnalyzer:
     A utility class for loading and analyzing solar data.
     """
 
+
     def __init__(self, filepath):
         """
         Initialize the analyzer by loading the CSV data.
@@ -16,6 +17,7 @@ class SolarDataAnalyzer:
             filepath (str): Relative path to the CSV file.
         """
         self.df = pd.read_csv(filepath)
+
 
     def plot_column(self, column, title="Column Over Time"):
         """
@@ -31,6 +33,7 @@ class SolarDataAnalyzer:
         plt.ylabel(column)
         plt.tight_layout()
         plt.show()
+
 
     def summary_stats(self):
         """
