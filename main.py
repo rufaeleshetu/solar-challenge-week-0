@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 
 
-ffrom utils import load_data, show_boxplot, show_top_regions
+from utils import load_data, show_boxplot, show_top_regions
 
 st.set_page_config(page_title="🌞 Solar Energy Dashboard", layout="wide")
 st.title("🌍 Solar Farm Data Insights Dashboard")
