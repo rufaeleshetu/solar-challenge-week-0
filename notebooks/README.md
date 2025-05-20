@@ -1,7 +1,17 @@
 # 🌞 Solar Challenge Week 0
 
-This project is part of the AI Mastery program and focuses on analyzing solar irradiance data from three West African countries: **Benin**, **Sierra Leone**, and **Togo**. The goal is to clean, explore, and compare solar data using modular and object-oriented Python code.
+Week 0 challenge: solar data analysis for the AI Mastery program using Python & Git.
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
+
+```bash
+notebooks/              # Jupyter notebooks for EDA
+src/                    # Source scripts (e.g., SolarDataAnalyzer)
+tests/                  # Unit tests
+assets/                 # Generated plots & static files
+.github/workflows/      # GitHub Actions CI configs
+requirements.txt        # Python dependencies
+README.md               # Project overview
+observations.md         # Optional summary of insights
