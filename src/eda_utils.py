@@ -14,10 +14,11 @@ def load_data(country):
         st.error(f"File not found: {filepath}")
         return pd.DataFrame()
 
+
 def show_boxplot(df):
     st.write("📊 Boxplot would go here")
     # optional: add actual plotting logic
 
+
 def show_top_regions(df):
     st.write("🌍 Top insights go here")
-
