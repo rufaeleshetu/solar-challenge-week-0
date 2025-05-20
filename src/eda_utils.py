@@ -1,31 +1,24 @@
 import pandas as pd
-import matplotlib.pyplot as plt
+import streamlit as st
+import os
 
 
-class SolarDataAnalyzer:
-    """
-    A utility class for loading and analyzing solar data.
-    """
+def load_data(country):
+    filename = f"{country.lower().replace(' ', '_')}_clean.csv"
+    filepath = os.path.join("data", filename)
 
-    def __init__(self, filepath):
-        """
-        Initialize the analyzer by loading the CSV data.
+    st.write("Trying to load:", filepath)  # debug
+    if os.path.exists(filepath):
+        return pd.read_csv(filepath)
+    else:
+        st.error(f"File not found: {filepath}")
+        return pd.DataFrame()
 
-        Args:
-            filepath (str): Relative path to the CSV file.
-        """
-        self.df = pd.read_csv(filepath)
 
-    def plot_column(self, column, title="Column Over Time"):
-        """
-        Plot a time series line graph for a given column.
-        """
-        plt.plot(self.df[column], title=title)
-        plt.tight_layout()
-        plt.show()
+def show_boxplot(df):
+    st.write("📊 Boxplot would go here")
+    # optional: add actual plotting logic
 
-    def summary_stats(self):
-        """
-        Return summary statistics of the dataset.
-        """
-        return self.df.describe()
+
+def show_top_regions(df):
+    st.write("🌍 Top insights go here")

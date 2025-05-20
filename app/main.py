@@ -1,10 +1,13 @@
+import sys
+import os
+
+# Add src to the system path so it can import eda_utils
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', 'src')))
+
 import streamlit as st
-import pandas as pd
+from eda_utils import load_data, show_boxplot, show_top_regions
 
-
-from src.eda_utils import load_data, show_boxplot, show_top_regions
-
-st.set_page_config(page_title="🌞 Solar Energy Dashboard", layout="wide")
+st.set_page_config(page_title="🌍 Solar Energy Dashboard", layout="wide")
 st.title("🌍 Solar Farm Data Insights Dashboard")
 
 # Sidebar widget to select country
@@ -19,5 +22,3 @@ if not df.empty:
 
     st.markdown(f"### Top Insights for {country}")
     show_top_regions(df)
-else:
-    st.warning("Data not found or failed to load.")
